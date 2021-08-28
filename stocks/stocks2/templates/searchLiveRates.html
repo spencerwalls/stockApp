@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{% url 'searchLiveRates' %}" class="d-flex" method="POST">
+    {% csrf_token %} 
+    <input class="form-control me-2" type="search" placeholder="Enter any ticker here" aria-label="Search" name="ticker">
+    <button class="btn btn-outline-success" type="submit">Search Stocks</button>
+</form>
+
+</br></br>
+
+{% if data %}
+    {% if data == "Error" %}
+        The string entered is not a legitimate ticker 
+    {% else %}
+    <h1>{{data.companyName}}</h1></br>
+    ask price: {{data.iexAskPrice}}</br></br>
+    bid price: {{data.iexBidPrice}}</br></br>
+    currency: {{data.currency}}</br></br>
+    market cap: {{data.marketCap}}</br></br>
+    primary exchange: {{data.primaryExchange}}</br></br>
+    {% endif %}
+{% endif %}
+   
+{% endblock %}
