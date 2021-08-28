@@ -12,6 +12,8 @@
 
 6. Launch the application: `python stocks/manage.py runserver`
 
+7. Go to `localhost:8000` and login to the application. Any reasonable credentials will work. 
+
 # About
 
 - This is a basic stock-tracking app that allows users to login, search live stock rates,
