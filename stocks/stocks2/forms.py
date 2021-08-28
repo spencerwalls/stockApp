@@ -3,6 +3,8 @@ from .models import Stock
 from .models import Credential
 from .models import Wallet
 
+# These classes represent forms present in the application
+
 class CredentialForm(forms.ModelForm):
     class Meta:
         model = Credential

@@ -2,16 +2,22 @@
 {% block content %}
 
 <h1>Buy Stocks</h1>
+
 </br>
+
 <form action="{% url 'buyStock' %}" class="d-flex" method="POST">
     {% csrf_token %} 
       <input required class="form-control me-2" type="search" placeholder="Enter any ticker here" maxlength="10" aria-label="Search" name="ticker">
       <button class="btn btn-outline-success" type="submit">Buy Stock</button>
 </form>
+
 </br>
 </br>
+
 <h1>Portfolio</h1>
+
 </br>
+
 {% for stock in allStocks %}
     {{ stock }} - <a href="{% url 'sellStock' stock.id %}">Sell stock</a><br/>
 {% endfor %} 

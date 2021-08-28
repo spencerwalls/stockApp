@@ -1,5 +1,7 @@
 from django.db import models
 
+# These classes represent their respective models in the database
+
 class Credential(models.Model):
     email = models.CharField(max_length=36)
     password = models.CharField(max_length=36)
